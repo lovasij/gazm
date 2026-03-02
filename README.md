@@ -1,7 +1,6 @@
 ## Orvosi betegnyilvántartás
 Készítsünk relációs adatmodellt egy háziorvosi betegnyilvántartó rendszerhez. Az orvosok elvárásainak
-megfelelően az adatbázisnak tartalmaznia kell a betegek személyi adatait, gyógyszerérzékenységüket, az egyes
-vizsgálatok időpontjait és felírt gyógyszereket.
+megfelelően az adatbázisnak tartalmaznia kell a betegek személyi adatait, gyógyszerérzékenységüket, az egyes vizsgálatok időpontjait és felírt gyógyszereket.
 
 ### Feltételezzük, hogy:
 
