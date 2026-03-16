@@ -60,7 +60,7 @@
 
 
     <h2>Adatbázisok létrehozása</h2>
-    <h3>Páciensek tábla:</h3>
+    <h3>Táblák létrehozása:</h3>
     <ul>
     <li>CREATE TABLE 212e.paciensek (
         pid VARCHAR(11) PRIMARY KEY,
@@ -75,6 +75,39 @@
         pid VARCHAR(11),
         PRIMARY KEY (vid, datum),
         FOREIGN KEY (pid) REFERENCES paciensek(pid)
+        );
+    </li>
+    <li>CREATE TABLE 212e.betegseg (
+        bnev VARCHAR(50) PRIMARY KEY
+        );
+    </li>
+    <li>CREATE TABLE 212e.gyogyszer (
+        gynev VARCHAR(50) PRIMARY KEY
+        );
+    </li>
+    <li>CREATE TABLE 212e.diagnózis (
+        vid INT,
+        datum DATE,
+        bnev VARCHAR(50),
+        PRIMARY KEY (vid, datum, bnev),
+        FOREIGN KEY (vid, datum) REFERENCES vizsgalat(vid, datum),
+        FOREIGN KEY (bnev) REFERENCES betegseg(bnev)
+        );
+    </li>
+    <li>CREATE TABLE 212e.mit_kap (
+        bnev VARCHAR(50),
+        gynev VARCHAR(50),
+        PRIMARY KEY (bnev, gynev),
+        FOREIGN KEY (bnev) REFERENCES betegseg(bnev),
+        FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
+        );
+    </li>
+    <li>CREATE TABLE 212e.mire_erzekeny (
+        pid VARCHAR(11),
+        gynev VARCHAR(50),
+        PRIMARY KEY (pid, gynev),
+        FOREIGN KEY (pid) REFERENCES paciensek(pid),
+        FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
         );
     </li>
     </ul>
