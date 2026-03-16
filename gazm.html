@@ -123,6 +123,56 @@
             <p>('26511123265','Kocsis Béláné','Téglás, Március 15. utca 3.','(52) 384-345'),</p>
             <p>('14404013214','Rézbányai Ernő','Hajdúhadház, Bocskai út 35.','(66) 325-643');</p>
         </li>
+        <li>
+            <p>INSERT INTO 212e.vizsgalat (vid, pid, datum) VALUES</p>
+            <p>(1,'17402213339','1996-02-11'),</p>
+            <p>(2,'17303313254','1996-02-11'),</p>
+            <p>(3,'25602143598','1996-02-11'),</p>
+            <p>(4,'26511123265','1996-02-11'),</p>
+            <p>(5,'14404013214','1996-02-11');</p>
+        </li>
+        <li>
+            <p>INSERT INTO 212e.betegseg (bnev) VALUES</p>
+            <p>('grippe'),</p>
+            <p>('hepatitis'),</p>
+            <p>('encefaritis'),</p>
+            <p>('encephalomylitis'),</p>
+            <p>('pneumonia'),</p>
+            <p>('bronchitis');</p>
+        </li>
+        <li>
+            <p>INSERT INTO 212e.gyogyszer (gynev) VALUES</p>
+            <p>('Semicilin'),</p>
+            <p>('Prednisolon'),</p>
+            <p>('Medrol'),</p>
+            <p>('Metyl-pred'),</p>
+            <p>('Ceclor'),</p>
+            <p>('Diflucan'),</p>
+            <p>('Calciphedrin');</p>
+        </li>
+        <li>
+            <p>INSERT INTO 212e.mit_kap (bnev, gynev) VALUES</p>
+            <p>('grippe','Semicilin'),</p>
+            <p>('hepatitis','Prednisolon'),</p>
+            <p>('encefaritis','Medrol'),</p>
+            <p>('encephalomylitis','Metyl-pred'),</p>
+            <p>('pneumonia','Ceclor'),</p>
+            <p>('bronchitis','Calciphedrin');</p>
+        </li>
+        <li>
+            <p>INSERT INTO 212e.mire_erzekeny (pid, gynev) VALUES</p>
+            <p>('26511123265','Diflucan'),</p>
+            <p>('26511123265','Calciphedrin');</p>
+        </li>
+        <li>
+            <p>INSERT INTO 212e.diagnózis (vid, datum, bnev) VALUES</p>
+            <p>(1,'1996-02-11','encefaritis'),</p>
+            <p>(1,'1996-02-11','encephalomylitis'),</p>
+            <p>(2,'1996-02-11','grippe'),</p>
+            <p>(3,'1996-02-11','hepatitis'),</p>
+            <p>(4,'1996-02-11','pneumonia'),</p>
+            <p>(5,'1996-02-11','grippe');</p>
+        </li>
     </ul>
 
     
