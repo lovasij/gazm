@@ -1,3 +1,33 @@
 body{
     background-color: lightblue;
+    font-size: larger;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.fejlec{
+    background-color: white;
+    text-align: center;
+    height: 90px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: blue;
+}
+.menu{
+    text-align: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 20px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
 }
