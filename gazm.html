@@ -69,6 +69,22 @@
         FOREIGN KEY (bnev) REFERENCES betegseg(bnev)
         );
     </li>
+    <li>CREATE TABLE 212e.mit_kap (
+        bnev VARCHAR(50),
+        gynev VARCHAR(50),
+        PRIMARY KEY (bnev, gynev),
+        FOREIGN KEY (bnev) REFERENCES betegseg(bnev),
+        FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
+        );
+    </li>
+    <li>CREATE TABLE 212e.mire_erzekeny (
+        pid VARCHAR(11),
+        gynev VARCHAR(50),
+        PRIMARY KEY (pid, gynev),
+        FOREIGN KEY (pid) REFERENCES paciensek(pid),
+        FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
+        );
+    </li>
     </ul>
 </body>
 </html>
