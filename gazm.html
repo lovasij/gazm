@@ -63,56 +63,66 @@
     <h2>Adatbázis létrehozása</h2>
     <h3>Táblák létrehozása:</h3>
     <ul>
-    <li>CREATE TABLE 212e.paciensek (
-        pid VARCHAR(11) PRIMARY KEY,
-        nev VARCHAR(100),
-        cim VARCHAR(100),
-        telefon VARCHAR(20)
-        );
+    <li><p>CREATE TABLE 212e.paciensek (</p>
+        <p>pid VARCHAR(11) PRIMARY KEY,</p>
+        <p>nev VARCHAR(100),</p>
+        <p>cim VARCHAR(100),</p>
+        <p>telefon VARCHAR(20)</p>
+        <p>);</p>
     </li>
-    <li>CREATE TABLE 212e.vizsgalat (
-        vid INT,
-        datum DATE,
-        pid VARCHAR(11),
-        PRIMARY KEY (vid, datum),
-        FOREIGN KEY (pid) REFERENCES paciensek(pid)
-        );
+    <li><p>CREATE TABLE 212e.vizsgalat (</p>
+        <p>vid INT,</p>
+        <p>datum DATE,</p>
+        <p>pid VARCHAR(11),</p>
+        <p>PRIMARY KEY (vid, datum),</p>
+        <p>FOREIGN KEY (pid) REFERENCES paciensek(pid)</p>
+        <p>);</p>
     </li>
-    <li>CREATE TABLE 212e.betegseg (
-        bnev VARCHAR(50) PRIMARY KEY
-        );
+    <li><p>CREATE TABLE 212e.betegseg (</p>
+        <p>bnev VARCHAR(50) PRIMARY KEY</p>
+        <p>);</p>
     </li>
-    <li>CREATE TABLE 212e.gyogyszer (
-        gynev VARCHAR(50) PRIMARY KEY
-        );
+    <li><p>CREATE TABLE 212e.gyogyszer (</p>
+        <p>gynev VARCHAR(50) PRIMARY KEY</p>
+        <p>);</p>
     </li>
-    <li>CREATE TABLE 212e.diagnózis (
-        vid INT,
-        datum DATE,
-        bnev VARCHAR(50),
-        PRIMARY KEY (vid, datum, bnev),
-        FOREIGN KEY (vid, datum) REFERENCES vizsgalat(vid, datum),
-        FOREIGN KEY (bnev) REFERENCES betegseg(bnev)
-        );
+    <li><p>CREATE TABLE 212e.diagnózis (</p>
+        <p>vid INT,</p>
+        <p>datum DATE,</p>
+        <p>bnev VARCHAR(50),</p>
+        <p>PRIMARY KEY (vid, datum, bnev),</p>
+        <p>FOREIGN KEY (vid, datum) REFERENCES vizsgalat(vid, datum),</p>
+        <p>FOREIGN KEY (bnev) REFERENCES betegseg(bnev)</p>
+        <p>);</p>
     </li>
-    <li>CREATE TABLE 212e.mit_kap (
-        bnev VARCHAR(50),
-        gynev VARCHAR(50),
-        PRIMARY KEY (bnev, gynev),
-        FOREIGN KEY (bnev) REFERENCES betegseg(bnev),
-        FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
-        );
+    <li><p>CREATE TABLE 212e.mit_kap (</p>
+        <p>bnev VARCHAR(50),</p>
+        <p>gynev VARCHAR(50),</p>
+        <p>PRIMARY KEY (bnev, gynev),</p>
+        <p>FOREIGN KEY (bnev) REFERENCES betegseg(bnev),</p>
+        <p>FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)</p>
+        <p>);</p>
     </li>
-    <li>CREATE TABLE 212e.mire_erzekeny (
-        pid VARCHAR(11),
-        gynev VARCHAR(50),
-        PRIMARY KEY (pid, gynev),
-        FOREIGN KEY (pid) REFERENCES paciensek(pid),
-        FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
-        );
+    <li><p>CREATE TABLE 212e.mire_erzekeny (</p>
+        <p>pid VARCHAR(11),</p>
+        <p>gynev VARCHAR(50),</p>
+        <p>PRIMARY KEY (pid, gynev),</p>
+        <p>FOREIGN KEY (pid) REFERENCES paciensek(pid),</p>
+        <p>FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)</p>
+        <p>);</p>
     </li>
     </ul>
 
     <h3>Táblák feltöltése:</h3>
+    <ul>
+        <li>
+            <p>INSERT INTO 212e.paciensek (pid, nev, cim, telefon) VALUES</p>
+            <p>('17402213339','Kovács Krisztián','Hajdúhadház, Szűk u. 1.','(66) 329-896'),</p>
+            <p>('17303313254','Andrészki Dezső','Téglás, Kossuth utca 125.','(52) 421-643'),</p>
+            <p>('25602143598','Kajár Miklósné','Téglás, Petőfi út 12.','(52) 342-453'),</p>
+            <p>('26511123265','Kocsis Béláné','Téglás, Március 15. utca 3.','(52) 384-345'),</p>
+            <p>('14404013214','Rézbányai Ernő','Hajdúhadház, Bocskai út 35.','(66) 325-643');</p>
+        </li>
+    </ul>
 </body>
 </html>
