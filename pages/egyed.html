@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyedtípusok</title>
+</head>
+<body>
+    <h2>Egyedtípusok és azonosítás</h2>
+    <h3>paciensek</h3>
+    <ul>
+        <li>pid (Elsődleges kulcs)</li>
+        <li>nev</li>
+        <li>cim</li>
+        <li>telefon</li>
+    </ul>
+
+    <h3>vizsgalat</h3>
+    <ul>
+        <li>vid (Elsődleges kulcs)</li>
+        <li>datum (Elsődleges kulcs)</li>
+        <li>pid (Idegen kulcs)</li>
+    </ul>
+
+    <h3>betegseg</h3>
+    <ul>
+        <li>bnev (Elsődleges kulcs)</li>
+    </ul>
+
+    <h3>gyogyszer</h3>
+    <ul>
+        <li>gynev (Elsődleges kulcs)</li>
+    </ul>
+
+    <h3>mit_kap</h3>
+    <ul>
+        <li>bnev (Elsődleges kulcs)</li>
+        <li>gynev (Elsődleges kulcs)</li>
+        <p>Kapcsolat:</p>
+        <li>betegseg <--> gyogyszer</li>
+    </ul>
+
+    <h3>mire_erzekeny</h3>
+    <ul>
+        <li>pid (Elsődleges kulcs)</li>
+        <li>gynev (Elsődleges kulcs)</li>
+        <p>Kapcsolat:</p>
+        <li>paciensek <--> gyogyszer</li>
+    </ul>
+
+    <h3>diagnózis</h3>
+    <ul>
+        <li>vid (Elsődleges kulcs)</li>
+        <li>datum (Elsődleges kulcs)</li>
+        <li>bnev (Elsődleges kulcs)</li>
+        <p>Kapcsolat:</p>
+        <li>vizsgalat <--> betegseg</li>
+    </ul>
+    
+</body>
+</html>
