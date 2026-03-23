@@ -48,6 +48,11 @@ a:hover{
 }
 .tablak{
     background-color: white;
+    border-radius: 15px;
+    opacity: 90%;
+    padding: 50px;
+    margin-top: 15px;
+    border: 1px solid black;
 }
 img{
     margin: 0 auto;
