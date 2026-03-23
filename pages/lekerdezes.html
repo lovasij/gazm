@@ -23,53 +23,63 @@
         <div class="tablak">
     <ul>
         <p>Összes páciens neve</p>
-        <li>SELECT név
-            FROM Páciens;</li>
+        <li>SELECT nev
+            FROM paciensek;</li>
+            <hr>
             <p>Azok a páciensek, akiknek volt vizsgálatuk</p>
         <li>SELECT név
-            FROM Páciens
-            WHERE Pid IN (SELECT Pid FROM Vizsgálat);</li>
+            FROM paciensek
+            WHERE pid IN (SELECT pid FROM vizsgalat);</li>
+            <hr>
             <p>Egy adott páciens (Kovács Krisztián) Pid-je</p>
-        <li>SELECT Pid
-            FROM Páciens
-            WHERE név = 'Kovács Krisztián';</li>
+        <li>SELECT pid
+            FROM paciensek
+            WHERE nev = 'Kovács Krisztián';</li>
+            <hr>
             <p>Az összes diagnosztizált betegség</p>
-        <li>SELECT DISTINCT Bnév
-            FROM Diagnózis;
+        <li>SELECT DISTINCT bnev
+            FROM diagnózis;
             </li>
+            <hr>
             <p>Azok a betegségek, amelyekhez tartozik gyógyszer</p>
-        <li>SELECT Bnév
-            FROM Mit_kap;</li>
+        <li>SELECT bnev
+            FROM mit_kap;</li>
+            <hr>
             <p>Azok a gyógyszerek, amelyek fel vannak írva valamilyen betegségre</p>
-        <li>SELECT Gynév
-            FROM Gyógyszer
-            WHERE Gynév IN (SELECT Gynév FROM Mit_kap);
+        <li>SELECT gynev
+            FROM gyogyszer
+            WHERE gynev IN (SELECT gynev FROM mit_kap);
+            <hr>
             <p>Azok a páciensek, akik érzékenyek valamire</p>
             </li>
             
-        <li>SELECT név
-            FROM Páciens
-            WHERE Pid IN (
-                SELECT Pid FROM Mire_érzékeny WHERE Gynév IS NOT NULL
+        <li>SELECT nev
+            FROM paciensek
+            WHERE pid IN (
+                SELECT pid FROM mire_erzekeny WHERE gynev IS NOT NULL
             );</li>
+            <hr>
             <p>Azok a páciensek, akik nem érzékenyek gyógyszerre</p>
-        <li>SELECT név
-            FROM Páciens
-            WHERE Pid NOT IN (
-                SELECT Pid FROM Mire_érzékeny WHERE Gynév IS NOT NULL
+        <li>SELECT nev
+            FROM paciensek
+            WHERE pid NOT IN (
+                SELECT pid FROM mire_erzekeny WHERE gynev IS NOT NULL
             );
             </li>
+            <hr>
             <p>Egy adott páciens vizsgálatainak dátuma</p>
-        <li>SELECT Dátum
-            FROM Vizsgálat
-            WHERE Pid = (
-                SELECT Pid FROM Páciens WHERE név = 'Kovács Krisztián'
+        <li>SELECT datum
+            FROM vizsgalat
+            WHERE pid = (
+                SELECT pid FROM paciensek WHERE nev = 'Kovács Krisztián'
             );
             </li>
+            <hr>
             <p>Azok a betegségek, amelyek szerepelnek diagnózisban</p>
-        <li>SELECT Bnév
-            FROM Betegség
-            WHERE Bnév IN (SELECT Bnév FROM Diagnózis);</li>
+        <li>SELECT bnev
+            FROM betegseg
+            WHERE bnev IN (SELECT bnev FROM diagnózis);</li>
+            <hr>
     </ul>
     </div>
     <div class="labresz">
